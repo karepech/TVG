@@ -1,0 +1,8 @@
+{
+  "name": "m3u-auto",
+  "type": "module",
+  "dependencies": {
+    "axios": "^1.6.7",
+    "node-fetch": "^3.3.2"
+  }
+}
