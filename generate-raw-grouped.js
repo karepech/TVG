@@ -4,13 +4,11 @@ import axios from "axios";
 
 /*
   generate-raw-grouped.js 
-  - TANPA EXCEPTION LIST: Semua channel (termasuk BeIN) dipaksa melewati HTTP HEAD check.
-  - Nama Channel diganti dengan Nama Pertandingan (Final Feature).
+  - FITUR BARU: Menghasilkan file EPG (epg-sports.xml) untuk acara sepak bola yang ditemukan.
 */
 
 // Sumber M3U lokal di repositori Anda
 const LOCAL_M3U_FILES = ["live.m3u", "bw.m3u"]; 
-
 // Sumber eksternal tambahan
 const SOURCE_M3US = [
   "https://getch.semar.my.id/",
@@ -39,7 +37,23 @@ function convertUtcToWib(utcTime, dateString) {
     const hours = String(dateTimeUtc.getHours()).padStart(2, '0');
     const minutes = String(dateTimeUtc.getMinutes()).padStart(2, '0');
     
-    return `${hours}:${minutes} WIB`;
+    return {
+      timeWib: `${hours}:${minutes} WIB`,
+      dateTimeWib: dateTimeUtc
+    };
+}
+
+// Fungsi pembantu untuk membuat format EPG Time (YYYYMMDDHHMMSS +0700)
+function formatEpgTime(dateObject) {
+    const d = dateObject;
+    const offset = '+0700';
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    const hours = String(d.getHours()).padStart(2, '0');
+    const minutes = String(d.getMinutes()).padStart(2, '0');
+    const seconds = String(d.getSeconds()).padStart(2, '0');
+    return `${year}${month}${day}${hours}${minutes}${seconds} ${offset}`;
 }
 
 function getFutureDates() {
@@ -68,16 +82,16 @@ async function fetchText(url) {
   }
 }
 
-/**
- * MODIFIKASI KRUSIAL: Menghapus semua pengecualian. Semua link HTTP dipaksa cek HEAD.
- */
 async function headOk(url, sourceTag) {
-  // Biarkan protokol non-HTTP (rtmp, udp) lolos tanpa cek
-  if (!url.startsWith('http')) { 
+  if (sourceTag.includes("LOCAL_FILE") || sourceTag.includes("BW_M3U") || !url.startsWith('http')) { 
       return true;
   }
   
-  // Lakukan cek HEAD standar yang ketat untuk SEMUA link HTTP/HTTPS
+  const lowerUrl = url.toLowerCase();
+  if (lowerUrl.includes('bein') || lowerUrl.includes('spotv') || lowerUrl.includes('dazn')) { 
+      return true;
+  }
+
   try {
     const res = await axios.head(url, { 
         timeout: 7000,
@@ -86,7 +100,6 @@ async function headOk(url, sourceTag) {
             'Referer': 'https://www.google.com'
         }
     });
-    // Ini akan gagal jika BeIN/SPOTV memblokir IP GitHub
     return res.status === 200;
   } catch {
     return false;
@@ -169,7 +182,7 @@ async function fetchAndGroupEvents() {
                 const targetGroup = d.isToday ? groupedEvents.live : groupedEvents.upcoming;
                 
                 events.forEach(ev => {
-                    const wibTime = convertUtcToWib(ev.strTime, ev.dateEvent);
+                    const timeWib = convertUtcToWib(ev.strTime, ev.dateEvent);
                     
                     // --- LOGIKA PEMBANGUNAN NAMA EVENT TANGGUH ---
                     const homeTeam = ev.strHomeTeam || "";
@@ -184,13 +197,16 @@ async function fetchAndGroupEvents() {
                         eventDescription = generalEventName;
                     }
 
-                    const eventDetail = `${eventDescription} (${wibTime}) - ${d.dateKey}`;
+                    const eventDetail = `${eventDescription} (${timeWib.timeWib}) - ${d.dateKey}`;
                     // ----------------------------------------------------
 
                     targetGroup.events.push({
                         detail: eventDetail,
                         keywords: [ev.strHomeTeam, ev.strAwayTeam, ev.strLeague, ev.strEvent],
-                        timeWib: wibTime
+                        timeWib: timeWib.timeWib,
+                        dateTimeWib: timeWib.dateTimeWib, // Tambahkan objek Date untuk EPG
+                        title: eventDescription,
+                        league: ev.strLeague
                     });
                     
                     if (homeTeam) targetGroup.keywords.add(homeTeam);
@@ -204,7 +220,7 @@ async function fetchAndGroupEvents() {
         }
     }
     
-    // HACK: Menambahkan keyword umum untuk Live matching (tetap diperlukan untuk matching!)
+    // HACK: Menambahkan keyword umum untuk meningkatkan Live matching
     groupedEvents.live.keywords.add("bein sports");
     groupedEvents.live.keywords.add("premier league"); 
     groupedEvents.live.keywords.add("spotv");
@@ -234,9 +250,10 @@ function channelMatchesKeywords(channelName, eventKeywords, channelMap) {
 // ========================== MAIN ==========================
 
 async function main() {
-  console.log("Starting generate-raw-grouped.js (Strict HEAD Check Run)...");
+  console.log("Starting generate-raw-grouped.js (EPG Integration)...");
 
   const channelMap = loadChannelMap();
+  const EPG_OUTPUT = []; // Array untuk menampung data EPG
 
   // --- Langkah 1: Ambil SEMUA Channel ---
   let allChannelsRaw = [];
@@ -262,7 +279,6 @@ async function main() {
   const onlineCheckPromises = allChannelsRaw.map(async (ch) => {
     const sourceTag = ch.source;
 
-    // Panggil headOk tanpa pengecualian
     const ok = await headOk(ch.url, sourceTag); 
     if (ok) {
         onlineChannelsMap.set(ch.uniqueId, ch); 
@@ -272,7 +288,7 @@ async function main() {
 
   await Promise.all(onlineCheckPromises);
   const onlineChannels = Array.from(onlineChannelsMap.values());
-  console.log("Total channels verified as ONLINE (Strict Check):", onlineChannels.length);
+  console.log("Total channels verified as ONLINE:", onlineChannels.length);
 
   // --- Langkah 3: Ambil Jadwal Event & Kelompokkan ---
   const groupedEvents = await fetchAndGroupEvents();
@@ -291,7 +307,6 @@ async function main() {
   
   let liveEventCount = 0;
   
-  // Tampilkan daftar event live sebagai header info
   liveEventsList.forEach(e => {
       output.push(`# EVENT INFO: ${e.detail}`);
   });
@@ -302,7 +317,6 @@ async function main() {
           const matchingEvent = liveEventsList.find(event => channelMatchesKeywords(ch.name, event.keywords, channelMap));
           
           const attributes = getExtinfAttributes(ch.extinf);
-          
           const newChannelName = matchingEvent ? matchingEvent.detail : ch.name;
           
           let newExtInf = '#EXTINF:-1 ';
@@ -318,6 +332,18 @@ async function main() {
           output.push(ch.url);
           addedChannelIds.add(ch.uniqueId);
           liveEventCount++;
+          
+          // --- TAMBAHAN EPG LOGIC ---
+          if (matchingEvent && attributes['tvg-id']) {
+              EPG_OUTPUT.push({
+                  channelId: attributes['tvg-id'],
+                  start: matchingEvent.dateTimeWib,
+                  end: new Date(matchingEvent.dateTimeWib.getTime() + (120 * 60000)), // Asumsi 120 menit
+                  title: matchingEvent.title,
+                  desc: `Coverage for ${matchingEvent.league}`
+              });
+          }
+          // --------------------------
       }
   }
 
@@ -330,7 +356,6 @@ async function main() {
   
   let upcomingEventCount = 0;
   
-  // Tampilkan daftar event mendatang (Nama Tim, Jam WIB, Tanggal)
   upcomingEventsList.forEach(e => {
       output.push(`# EVENT INFO: ${e.detail}`);
   });
@@ -356,6 +381,18 @@ async function main() {
           output.push(ch.url);
           addedChannelIds.add(ch.uniqueId);
           upcomingEventCount++;
+
+          // --- TAMBAHAN EPG LOGIC ---
+          if (matchingEvent && attributes['tvg-id']) {
+              EPG_OUTPUT.push({
+                  channelId: attributes['tvg-id'],
+                  start: matchingEvent.dateTimeWib,
+                  end: new Date(matchingEvent.dateTimeWib.getTime() + (120 * 60000)), // Asumsi 120 menit
+                  title: matchingEvent.title,
+                  desc: `Coverage for ${matchingEvent.league}`
+              });
+          }
+          // --------------------------
       }
   }
   
@@ -374,12 +411,39 @@ async function main() {
     }
   }
   
-  // --- Langkah 5: Tulis file M3U dan Statistik ---
+  // --- Langkah 5: Tulis file M3U dan Statistik + EPG XML ---
   const FILENAME_M3U = "live-raw-grouped.m3u"; 
   const FILENAME_STATS = "live-raw-stats.json";
+  const FILENAME_EPG_XML = "epg-sports.xml";
 
+  // 1. Tulis file M3U
   fs.writeFileSync(FILENAME_M3U, output.join("\n") + "\n");
 
+  // 2. Tulis file EPG XML
+  let xmlOutput = '<?xml version="1.0" encoding="utf-8"?>\n<tv date="' + formatDateForM3U(new Date()) + '" source-info-name="DonzTV Guide">\n';
+  
+  // Tambahkan definisi channels yang ditemukan (untuk EPG)
+  uniqueCount.forEach(url => {
+      const ch = onlineChannels.find(c => c.url === url);
+      const attributes = getExtinfAttributes(ch.extinf);
+      if (attributes['tvg-id']) {
+          xmlOutput += `<channel id="${attributes['tvg-id']}">\n<display-name>${ch.name}</display-name>\n</channel>\n`;
+      }
+  });
+
+  // Tambahkan program/acara (event)
+  EPG_OUTPUT.forEach(p => {
+      xmlOutput += `<programme start="${formatEpgTime(p.start)}" stop="${formatEpgTime(p.end)}" channel="${p.channelId}">\n`;
+      xmlOutput += `<title lang="id">${p.title}</title>\n`;
+      xmlOutput += `<desc lang="id">${p.desc}</desc>\n`;
+      xmlOutput += `<category lang="id">Sport - Sepakbola</category>\n`;
+      xmlOutput += `</programme>\n`;
+  });
+  
+  xmlOutput += '</tv>';
+  fs.writeFileSync(FILENAME_EPG_XML, xmlOutput);
+
+  // 3. Tulis file Statistik
   const stats = {
     fetchedTotalRaw: allChannelsRaw.length,
     uniqueUrlsOnline: uniqueCount.size,
@@ -387,6 +451,7 @@ async function main() {
     onlineLive: liveEventCount,
     onlineUpcoming: upcomingEventCount,
     onlineGeneral: allOnlineCount,
+    epgEventsCount: EPG_OUTPUT.length,
     generatedAt: new Date().toISOString()
   };
 
@@ -397,8 +462,8 @@ async function main() {
   console.log("Channels in 'LIVE EVENT' group:", liveEventCount);
   console.log("Channels in 'UPCOMING EVENTS' group:", upcomingEventCount);
   console.log("Channels in 'ALL SPORTS CHANNELS' group (catch-all):", allOnlineCount);
-  console.log("Generated", FILENAME_M3U);
-  console.log("Stats saved to", FILENAME_STATS);
+  console.log(`Generated M3U file: ${FILENAME_M3U}`);
+  console.log(`Generated EPG file: ${FILENAME_EPG_XML} (${EPG_OUTPUT.length} programs)`);
 }
 
 main().catch(err => {
