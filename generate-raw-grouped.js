@@ -4,20 +4,21 @@ import axios from "axios";
 
 /*
   generate-raw-grouped.js 
-  - FINAL VERIFIKASI: Menambahkan logging eksplisit untuk memverifikasi data yang ditarik dari API.
+  - TANPA EXCEPTION LIST: Semua channel (termasuk BeIN) dipaksa melewati HTTP HEAD check.
+  - Nama Channel diganti dengan Nama Pertandingan (Final Feature).
 */
 
 // Sumber M3U lokal di repositori Anda
 const LOCAL_M3U_FILES = ["live.m3u", "bw.m3u"]; 
 
-// Sumber eksternal tambahan (jika masih diperlukan)
+// Sumber eksternal tambahan
 const SOURCE_M3US = [
   "https://getch.semar.my.id/",
   "https://bakulwifi.my.id/bw.m3u"
 ];
 const MAX_DAYS_AHEAD = 2; 
 
-// ======================= HELPER FUNCTIONS (Tidak Berubah) =======================
+// ======================= HELPER FUNCTIONS =======================
 
 function formatDateForM3U(date) {
   const d = new Date(date);
@@ -67,16 +68,16 @@ async function fetchText(url) {
   }
 }
 
+/**
+ * MODIFIKASI KRUSIAL: Menghapus semua pengecualian. Semua link HTTP dipaksa cek HEAD.
+ */
 async function headOk(url, sourceTag) {
-  if (sourceTag.includes("LOCAL_FILE") || sourceTag.includes("BW_M3U") || !url.startsWith('http')) { 
+  // Biarkan protokol non-HTTP (rtmp, udp) lolos tanpa cek
+  if (!url.startsWith('http')) { 
       return true;
   }
   
-  const lowerUrl = url.toLowerCase();
-  if (lowerUrl.includes('bein') || lowerUrl.includes('spotv') || lowerUrl.includes('dazn')) { 
-      return true;
-  }
-
+  // Lakukan cek HEAD standar yang ketat untuk SEMUA link HTTP/HTTPS
   try {
     const res = await axios.head(url, { 
         timeout: 7000,
@@ -85,6 +86,7 @@ async function headOk(url, sourceTag) {
             'Referer': 'https://www.google.com'
         }
     });
+    // Ini akan gagal jika BeIN/SPOTV memblokir IP GitHub
     return res.status === 200;
   } catch {
     return false;
@@ -168,7 +170,22 @@ async function fetchAndGroupEvents() {
                 
                 events.forEach(ev => {
                     const wibTime = convertUtcToWib(ev.strTime, ev.dateEvent);
-                    const eventDetail = `${ev.strHomeTeam} vs ${ev.strAwayTeam} (${wibTime}) - ${d.dateKey}`;
+                    
+                    // --- LOGIKA PEMBANGUNAN NAMA EVENT TANGGUH ---
+                    const homeTeam = ev.strHomeTeam || "";
+                    const awayTeam = ev.strAwayTeam || "";
+                    const generalEventName = ev.strEvent || ev.strLeague || "General Sport Event";
+
+                    let eventDescription;
+
+                    if (homeTeam && awayTeam) {
+                        eventDescription = `${homeTeam} vs ${awayTeam}`;
+                    } else {
+                        eventDescription = generalEventName;
+                    }
+
+                    const eventDetail = `${eventDescription} (${wibTime}) - ${d.dateKey}`;
+                    // ----------------------------------------------------
 
                     targetGroup.events.push({
                         detail: eventDetail,
@@ -176,8 +193,8 @@ async function fetchAndGroupEvents() {
                         timeWib: wibTime
                     });
                     
-                    if (ev.strHomeTeam) targetGroup.keywords.add(ev.strHomeTeam);
-                    if (ev.strAwayTeam) targetGroup.keywords.add(ev.strAwayTeam);
+                    if (homeTeam) targetGroup.keywords.add(homeTeam);
+                    if (awayTeam) targetGroup.keywords.add(awayTeam);
                     if (ev.strLeague) targetGroup.keywords.add(ev.strLeague);
                     if (ev.strEvent) targetGroup.keywords.add(ev.strEvent); 
                 });
@@ -187,7 +204,7 @@ async function fetchAndGroupEvents() {
         }
     }
     
-    // HACK: Menambahkan keyword umum untuk meningkatkan Live matching
+    // HACK: Menambahkan keyword umum untuk Live matching (tetap diperlukan untuk matching!)
     groupedEvents.live.keywords.add("bein sports");
     groupedEvents.live.keywords.add("premier league"); 
     groupedEvents.live.keywords.add("spotv");
@@ -217,7 +234,7 @@ function channelMatchesKeywords(channelName, eventKeywords, channelMap) {
 // ========================== MAIN ==========================
 
 async function main() {
-  console.log("Starting generate-raw-grouped.js (Final API Log Check)...");
+  console.log("Starting generate-raw-grouped.js (Strict HEAD Check Run)...");
 
   const channelMap = loadChannelMap();
 
@@ -245,6 +262,7 @@ async function main() {
   const onlineCheckPromises = allChannelsRaw.map(async (ch) => {
     const sourceTag = ch.source;
 
+    // Panggil headOk tanpa pengecualian
     const ok = await headOk(ch.url, sourceTag); 
     if (ok) {
         onlineChannelsMap.set(ch.uniqueId, ch); 
@@ -254,15 +272,10 @@ async function main() {
 
   await Promise.all(onlineCheckPromises);
   const onlineChannels = Array.from(onlineChannelsMap.values());
-  console.log("Total channels verified as ONLINE:", onlineChannels.length);
+  console.log("Total channels verified as ONLINE (Strict Check):", onlineChannels.length);
 
   // --- Langkah 3: Ambil Jadwal Event & Kelompokkan ---
   const groupedEvents = await fetchAndGroupEvents();
-  
-  // *** BARIS DEBUG KRUSIAL ***
-  const totalApiEvents = groupedEvents.live.events.length + groupedEvents.upcoming.events.length;
-  console.log(`DEBUG: Total Events Fetched (H0 + H+1 + H+2) from API: ${totalApiEvents}`);
-  // *************************
   
   // --- Langkah 4: Kumpulkan Hasil Output ke Grup-grup ---
   const generatedTime = new Date().toISOString();
