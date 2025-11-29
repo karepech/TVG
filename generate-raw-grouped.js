@@ -4,21 +4,20 @@ import axios from "axios";
 
 /*
   generate-raw-grouped.js 
-  - FINAL PRODUKSI: Mengganti Nama Channel dengan detail Event yang sedang/akan berlangsung.
-  - Exception List: Menganggap channel lokal/premium selalu online.
+  - FINAL VERIFIKASI: Menambahkan logging eksplisit untuk memverifikasi data yang ditarik dari API.
 */
 
 // Sumber M3U lokal di repositori Anda
 const LOCAL_M3U_FILES = ["live.m3u", "bw.m3u"]; 
 
-// Sumber eksternal tambahan
+// Sumber eksternal tambahan (jika masih diperlukan)
 const SOURCE_M3US = [
   "https://getch.semar.my.id/",
   "https://bakulwifi.my.id/bw.m3u"
 ];
 const MAX_DAYS_AHEAD = 2; 
 
-// ======================= HELPER FUNCTIONS =======================
+// ======================= HELPER FUNCTIONS (Tidak Berubah) =======================
 
 function formatDateForM3U(date) {
   const d = new Date(date);
@@ -69,7 +68,6 @@ async function fetchText(url) {
 }
 
 async function headOk(url, sourceTag) {
-  // Exception List: Menganggap channel lokal/premium selalu online
   if (sourceTag.includes("LOCAL_FILE") || sourceTag.includes("BW_M3U") || !url.startsWith('http')) { 
       return true;
   }
@@ -219,7 +217,7 @@ function channelMatchesKeywords(channelName, eventKeywords, channelMap) {
 // ========================== MAIN ==========================
 
 async function main() {
-  console.log("Starting generate-raw-grouped.js (Final Production Run)...");
+  console.log("Starting generate-raw-grouped.js (Final API Log Check)...");
 
   const channelMap = loadChannelMap();
 
@@ -260,6 +258,11 @@ async function main() {
 
   // --- Langkah 3: Ambil Jadwal Event & Kelompokkan ---
   const groupedEvents = await fetchAndGroupEvents();
+  
+  // *** BARIS DEBUG KRUSIAL ***
+  const totalApiEvents = groupedEvents.live.events.length + groupedEvents.upcoming.events.length;
+  console.log(`DEBUG: Total Events Fetched (H0 + H+1 + H+2) from API: ${totalApiEvents}`);
+  // *************************
   
   // --- Langkah 4: Kumpulkan Hasil Output ke Grup-grup ---
   const generatedTime = new Date().toISOString();
