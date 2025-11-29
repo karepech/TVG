@@ -1,9 +1,10 @@
 {
   "fetchedTotalRaw": 284,
-  "uniqueUrlsOnline": 81,
-  "onlineTotalRaw": 86,
-  "onlineLive": 14,
+  "uniqueUrlsOnline": 77,
+  "onlineTotalRaw": 83,
+  "onlineLive": 19,
   "onlineUpcoming": 0,
-  "onlineGeneral": 72,
-  "generatedAt": "2025-11-29T18:21:31.793Z"
+  "onlineGeneral": 64,
+  "epgEventsCount": 0,
+  "generatedAt": "2025-11-29T18:34:39.764Z"
 }
