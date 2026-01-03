@@ -1,4 +1,4 @@
-#EXTM3U url-version="2026-01-03T21:32:03.802Z"
+#EXTM3U url-version="2026-01-03T21:45:21.496Z"
 
 #EXTINF:-1 group-title="⚽ LIVE EVENT", HARI INI - 1 Event
 # EVENT INFO: Melbourne Victory vs Western Sydney Wanderers FC (15:40 WIB) - 03-01-2026
@@ -37,28 +37,28 @@ https://atemecdnbalancer-voe.sysln.id/live/eds/SPOTVHD/mediampd/SPOTVHD.mpd
 https://raw.githubusercontent.com/DonzCompIndonesia/donztelevision/refs/heads/main/v1/BS3.m3u8
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Firefox/101.0
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=d0f2e5c39e70c18f29bf77768a1ad89a:d6853c51fcf37a18905f0609972395d7
-#EXTINF:-1 tvg-logo="https://i.imgur.com/v002hpu.jpg" ,TNT SPORTS 1
-https://a201aivottlinear-a.akamaihd.net/OTTB/lhr-nitro/live/dash/enc/bsaaetko8v/out/v1/bd3b0c314fff4bb1ab4693358f3cd2d3/cenc.mpd
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Firefox/101.0
-#KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=9f51f3dc6313ac8bc668e2d9d1c04dfa:74bc63e5a193454a91ca494975db33f9
 #EXTINF:-1 tvg-logo="https://i.imgur.com/25GGdCq.jpg" ,TNT SPORTS 2
 https://a151aivottlinear-a.akamaihd.net/OTTB/lhr-nitro/live/dash/enc/f0qvkrra8j/out/v1/f8fa17f087564f51aa4d5c700be43ec4/cenc.mpd
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Firefox/101.0
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=d0f2e5c39e70c18f29bf77768a1ad89a:d6853c51fcf37a18905f0609972395d7
+#EXTINF:-1 tvg-logo="https://i.imgur.com/v002hpu.jpg" ,TNT SPORTS 1
+https://a201aivottlinear-a.akamaihd.net/OTTB/lhr-nitro/live/dash/enc/bsaaetko8v/out/v1/bd3b0c314fff4bb1ab4693358f3cd2d3/cenc.mpd
 #EXTINF:-1 tvg-logo="https://i.imgur.com/sYp5eoL.jpg" ,SKY SPORTS MAIN
 http://line.stayconnected.pro:80/play/live.php?mac=00:1A:79:39:37:34&stream=1608071&extension=ts&play_token=Yq2ejQhCtj
 #EXTINF:-1 tvg-logo="https://i.imgur.com/IKC778N.jpg" ,SKY SPORTS+
 https://a1xs.vip/2000012
-#EXTINF:-1 tvg-logo="https://i.imgur.com/m7BZFt3.jpg" ,BEIN SPORTS 6
-http://superintendent.whatevergos.com:8080/ABDULLAH/aHVzDrpCMh/142760
+#EXTINF:-1 tvg-logo="https://i.imgur.com/lIzyqdW.jpg" ,BEIN SPORTS 4
+http://superintendent.whatevergos.com:8080/ABDULLAH/aHVzDrpCMh/142758
+#EXTINF:-1 tvg-logo="https://i.imgur.com/rAvA5Co.jpg" ,BEIN SPORTS 8
+http://superintendent.whatevergos.com:8080/ABDULLAH/aHVzDrpCMh/142752
 #EXTINF:-1 tvg-logo="https://i.imgur.com/6jxpZQ8.jpg" ,BEIN SPORTS 7
 http://superintendent.whatevergos.com:8080/ABDULLAH/aHVzDrpCMh/142761
 #EXTINF:-1 tvg-logo="https://i.imgur.com/fAaNONB.jpg" ,BEIN SPORTS 5
 http://superintendent.whatevergos.com:8080/ABDULLAH/aHVzDrpCMh/142759
-#EXTINF:-1 tvg-logo="https://i.imgur.com/rAvA5Co.jpg" ,BEIN SPORTS 8
-http://superintendent.whatevergos.com:8080/ABDULLAH/aHVzDrpCMh/142752
-#EXTINF:-1 tvg-logo="https://i.imgur.com/lIzyqdW.jpg" ,BEIN SPORTS 4
-http://superintendent.whatevergos.com:8080/ABDULLAH/aHVzDrpCMh/142758
+#EXTINF:-1 tvg-logo="https://i.imgur.com/m7BZFt3.jpg" ,BEIN SPORTS 6
+http://superintendent.whatevergos.com:8080/ABDULLAH/aHVzDrpCMh/142760
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=002046c9a49b9ab1cdb6616bec5d26c3:d2f92f6b7edc9a1a05d393ba0c20ef9e
 #EXTVLCOPT:http-user-agent=Roku/DVP-12.0
@@ -69,7 +69,7 @@ https://fsly.stream.peacocktv.com/Content/CMAF_CTR-4s/Live/channel(vc1021n07j)/m
 # EVENT INFO: Melbourne Victory vs Western Sydney Wanderers FC (15:40 WIB) - 04-01-2026
 # EVENT INFO: Melbourne Victory vs Western Sydney Wanderers FC (15:40 WIB) - 05-01-2026
 
-#EXTINF:-1 group-title="⭐ ALL SPORTS CHANNELS", 63 Channel Aktif Lainnya
+#EXTINF:-1 group-title="⭐ ALL SPORTS CHANNELS", 71 Channel Aktif Lainnya
 #EXTVLCOPT:http-referrer=https://ballsod24hrs.com/
 #EXTINF:-1 tvg-logo="https://i.imgur.com/6gQGTvi.jpg" group-title="⭐ ALL SPORTS CHANNELS",DAZN 2
 https://ww.dooballfree.vip/live/dazn2/playlist.m3u8
@@ -131,23 +131,23 @@ https://d2xz2v5wuvgur6.cloudfront.net/out/v1/63c0da12bb4d48afbaf053f51dff2353/in
 #EXTVLCOPT:http-user-agent=ExoPlayerDemo/2.15.1 (Linux; Android 13) ExoPlayerLib/2.15.1
 #EXTINF:-1 tvg-id="volleyball.in" tvg-logo="https://i.imgur.com/6m3NwYt.jpg" group-title="⭐ ALL SPORTS CHANNELS", MOJI SPORT ᴴᴰ
 http://103.170.33.11:9981/stream/channelid/1896622786?profile=pass
+#EXTINF:-1 tvg-logo="https://i.imgur.com/QI0sRvg.jpg" group-title="⭐ ALL SPORTS CHANNELS",STAR SPORT 1
+http://superintendent.whatevergos.com:8080/ABDULLAH/aHVzDrpCMh/33356
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:90.0) Gecko/20100101 Firefox/90.0
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=dc69b6159a0f9f0a4e03b3ff91cbacd5:d0dcbcd7723bc40df0bf34c9c092d51f
 #EXTINF:-1 group-title="⭐ ALL SPORTS CHANNELS" tvg-logo="https://i.imgur.com/BJ8LZ8Z.jpg",FUBO SPORTS
 https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/3b7qwiqzk3/out/v1/9f14895badca43e6a716db021dcd0c31/cenc.mpd
-#EXTINF:-1 tvg-logo="https://i.imgur.com/QI0sRvg.jpg" group-title="⭐ ALL SPORTS CHANNELS",STAR SPORT 1
-http://superintendent.whatevergos.com:8080/ABDULLAH/aHVzDrpCMh/33356
 #EXTINF:-1  tvg-logo="https://i.imgur.com/bMC6dEf.jpg" group-title="⭐ ALL SPORTS CHANNELS", ZIGGO SPORT 2
 https://wahyu1ptv.pages.dev/ZiggoSport2-HD.m3u8
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=9009b7189e3e68cc09d17811f2beb55a:dd3f96a94c909da48ff40c92aabf8cf3
-#EXTINF:-1 tvg-logo="https://i.imgur.com/aOkc7gc.jpg" group-title="⭐ ALL SPORTS CHANNELS",SPORTS 2
-https://otte.live.fly.ww.aiv-cdn.net/gru-nitro/live/clients/dash-sd/enc/4yiko4it8k/out/v1/b77dd424c745443aba2f3f88d418f797/cenc-sd.mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=91b9592c819246c68b3b08a1fe08ba22:fa0d80dfd865b34077bae44cd4a0c5e6
 #EXTINF:-1 tvg-logo="https://i.imgur.com/QDUEMAW.jpg" group-title="⭐ ALL SPORTS CHANNELS",M LIVE EVENT
 https://tglmp04.akamaized.net/out/v1/400fc0702dee453bb33ebcc29466e58a/manifest.mpd
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=9009b7189e3e68cc09d17811f2beb55a:dd3f96a94c909da48ff40c92aabf8cf3
+#EXTINF:-1 tvg-logo="https://i.imgur.com/aOkc7gc.jpg" group-title="⭐ ALL SPORTS CHANNELS",SPORTS 2
+https://otte.live.fly.ww.aiv-cdn.net/gru-nitro/live/clients/dash-sd/enc/4yiko4it8k/out/v1/b77dd424c745443aba2f3f88d418f797/cenc-sd.mpd
 #EXTINF:-1 group-title="⭐ ALL SPORTS CHANNELS" tvg-logo="https://i.imgur.com/WOuKrz8.jpg",SPOT TV 2
 https://d2tjypxxy769fn.cloudfront.net/out/v1/46d9cf39b9a84183b8d5022ac8f4bc41/index.mpd
 #EXTINF:-1 group-title="⭐ ALL SPORTS CHANNELS" tvg-logo="https://i.imgur.com/RElOsbl.jpg", SONY SPORTS 2
@@ -164,24 +164,24 @@ https://otte.live.fly.ww.aiv-cdn.net/dub-nitro/live/dash/enc/tepjqej1ys/out/v1/c
 http://Supersonictv.live:8080/live/006779/439866/22185.m3u8
 #EXTINF:-1 group-title="⭐ ALL SPORTS CHANNELS" tvg-logo="https://i.imgur.com/h78kzeH.jpg", ASTRO SPORTS PLUS ᴴᴰ
 https://raw.githubusercontent.com/Cutsiffa/pl/refs/heads/main/Astpl4.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="ASTRO ARENA 2 HD" tvg-logo="https://i.imgur.com/jOaanPV.jpg" group-title="⭐ ALL SPORTS CHANNELS",ASTRO ARENA 2 ᴴᴰ
-https://raw.githubusercontent.com/DonzCompIndonesia/donztelevision/refs/heads/main/v1/Astar2.m3u8
 #EXTINF:-1 tvg-id="" tvg-name="MY| ASTRO ARENA BOLA 1" tvg-logo="https://i.imgur.com/GpZxtSR.jpg" group-title="⭐ ALL SPORTS CHANNELS",ASTRO FOOTBALL ᴴᴰ
 https://raw.githubusercontent.com/DonzCompIndonesia/donztelevision/refs/heads/main/v1/AstFut.m3u8
-#EXTINF:-1 tvg-id="sonyten1hd.in" tvg-name="SONY TEN 1 HD" tvg-logo="https://i.imgur.com/SxeYwsn.jpg" group-title="⭐ ALL SPORTS CHANNELS",SONY TEN 1 ᴴᴰ
-https://raw.githubusercontent.com/DonzCompIndonesia/donztelevision/refs/heads/main/v1/Son1.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="ASTRO ARENA 2 HD" tvg-logo="https://i.imgur.com/jOaanPV.jpg" group-title="⭐ ALL SPORTS CHANNELS",ASTRO ARENA 2 ᴴᴰ
+https://raw.githubusercontent.com/DonzCompIndonesia/donztelevision/refs/heads/main/v1/Astar2.m3u8
 #EXTINF:-1 tvg-id="sonyten2hd.in" tvg-name="SONY TEN 2 HD" tvg-logo="https://i.imgur.com/u8Sn4SU.jpg" group-title="⭐ ALL SPORTS CHANNELS",SONY TEN 2 ᴴᴰ
 https://raw.githubusercontent.com/DonzCompIndonesia/donztelevision/refs/heads/main/v1/Son2.m3u8
-#EXTINF:-1 tvg-id="FashionTVMidnightSecrets.fr" tvg-logo="https://i.imgur.com/mL98nfP.jpg" group-title="⭐ ALL SPORTS CHANNELS",UNIFI SPORTS
-https://unifi-live01.secureswiftcontent.com/UnifiHD/live11.mpd
 #EXTINF: -1 tvg-logo="https://i.imgur.com/t5GXgiW.jpg" group-title="⭐ ALL SPORTS CHANNELS", ASTRO GRANDSTAND ᴴᴰ
 https://a1xs.vip/1100032
+#EXTINF:-1 tvg-id="FashionTVMidnightSecrets.fr" tvg-logo="https://i.imgur.com/mL98nfP.jpg" group-title="⭐ ALL SPORTS CHANNELS",UNIFI SPORTS
+https://unifi-live01.secureswiftcontent.com/UnifiHD/live11.mpd
 #EXTINF:-1 tvg-logo="https://i.imgur.com/0aVup1W.jpg" group-title="⭐ ALL SPORTS CHANNELS",DAZN 3
 http://1tv41.icu:8080/live/43761449506/smallwood/167748.ts
-#EXTINF:-1 tvg-logo="https://i.imgur.com/J6Cvpx5.jpg" group-title="⭐ ALL SPORTS CHANNELS",DAZN 5
-http://supersonictv.live:8080/006779/439866/7634
+#EXTINF:-1 tvg-id="sonyten1hd.in" tvg-name="SONY TEN 1 HD" tvg-logo="https://i.imgur.com/SxeYwsn.jpg" group-title="⭐ ALL SPORTS CHANNELS",SONY TEN 1 ᴴᴰ
+https://raw.githubusercontent.com/DonzCompIndonesia/donztelevision/refs/heads/main/v1/Son1.m3u8
 #EXTINF:-1 tvg-logo="https://i.imgur.com/MuVNAIM.jpg" group-title="⭐ ALL SPORTS CHANNELS",DAZN 4
 http://supersonictv.live:8080/006779/439866/7632
+#EXTINF:-1 tvg-logo="https://i.imgur.com/J6Cvpx5.jpg" group-title="⭐ ALL SPORTS CHANNELS",DAZN 5
+http://supersonictv.live:8080/006779/439866/7634
 #EXTINF:-1 tvg-logo="https://i.imgur.com/IfRv9r2.jpg" group-title="⭐ ALL SPORTS CHANNELS", DAZN F1
 http://medotv.nl:8000/RAMBOfoundedoninternetsoIchangedTheFuckinguSERNAMelol123/5caU9cN5jFjZ/115840
 #EXTINF:-1 tvg-id="PrimaSport1.ro" tvg-name="Prima Sport 1" tvg-logo="https://i.imgur.com/Mi4lZtx.jpg" group-title="⭐ ALL SPORTS CHANNELS" ,PRIMA SPORT 1
@@ -202,31 +202,31 @@ https://otte.live.fly.ww.aiv-cdn.net/gru-nitro/live/clients/dash-sd/enc/4yiko4it
 https://otte.live.fly.ww.aiv-cdn.net/gru-nitro/live/clients/dash/enc/6otiglnptp/out/v1/add7499679b0422cb6791f7701f95ecc/cenc.mpd?amznDtid=AOAGZA014O5RE&encoding=segmentBase
 #EXTINF:-1 tvg-logo="https://i.imgur.com/5ta779D.jpg" group-title="⭐ ALL SPORTS CHANNELS",TENNIS CHANNEL 1
 https://tennischannel-int-samsunguk.amagi.tv/playlist.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="SPORTS - HUB SPORTS 1" tvg-logo="https://i.imgur.com/WI4aOds.jpg" group-title="⭐ ALL SPORTS CHANNELS",HUB SPORTS 1
-https://github.com/udzaa2238/tvtb-me/raw/refs/heads/main/hub-sport-1-1.m3u8?raw=true
+#EXTINF:-1 tvg-id="starsportsselect1hd.in" tvg-name="Star Sports Select 1 HD" tvg-logo="https://i.imgur.com/9r0ahrX.jpg" group-title="⭐ ALL SPORTS CHANNELS",STAR SPORTS SELECT 1 ᴴᴰ
+http://superintendent.whatevergos.com:8080/ABDULLAH/aHVzDrpCMh/33356
 #EXTINF:-1 tvg-id="" tvg-name="SPORTS - HUB SPORTS 3" tvg-logo="https://i.imgur.com/ZNcKgS8.jpg" group-title="⭐ ALL SPORTS CHANNELS",HUB SPORTS 3
 https://github.com/udzaa2238/tvtb-me/raw/refs/heads/main/hub-sport-3-1.m3u8?raw=true
 #EXTINF:-1 tvg-id="" tvg-name="SPORTS - HUB SPORTS 2" tvg-logo="https://i.imgur.com/m74kmND.jpg" group-title="⭐ ALL SPORTS CHANNELS",HUB SPORTS 2
 https://github.com/udzaa2238/tvtb-me/raw/refs/heads/main/hub-sport-2-1.m3u8?raw=true
-#EXTINF:-1 tvg-id="starsportsselect1hd.in" tvg-name="Star Sports Select 1 HD" tvg-logo="https://i.imgur.com/9r0ahrX.jpg" group-title="⭐ ALL SPORTS CHANNELS",STAR SPORTS SELECT 1 ᴴᴰ
-http://superintendent.whatevergos.com:8080/ABDULLAH/aHVzDrpCMh/33356
+#EXTINF:-1 tvg-id="" tvg-name="SPORTS - HUB SPORTS 1" tvg-logo="https://i.imgur.com/WI4aOds.jpg" group-title="⭐ ALL SPORTS CHANNELS",HUB SPORTS 1
+https://github.com/udzaa2238/tvtb-me/raw/refs/heads/main/hub-sport-1-1.m3u8?raw=true
 #EXTINF:-1 tvg-logo="https://i.imgur.com/t0e6EYt.jpg" group-title="⭐ ALL SPORTS CHANNELS",ESPN
 http://medotv.nl:8000/RAMBOfoundedoninternetsoIchangedTheFuckinguSERNAMelol123/5caU9cN5jFjZ/14920
 #EXTINF:-1 tvg-logo="https://i.imgur.com/rL5ApWv.jpg" group-title="⭐ ALL SPORTS CHANNELS",ESPN 2
 http://supersonictv.live:8080/006779/439866/22199
+#EXTINF:-1 tvg-logo="https://i.imgur.com/VaUUODO.jpg" group-title="⭐ ALL SPORTS CHANNELS",ESPN NETWORK
+http://supersonictv.live:8080/006779/439866/22208
 #EXTVLCOPT:http-user-agent=TVRIKlik/8.0.2 (Linux;Android 15.0.0;) ExoPlayerLib/2.19.1
 #EXTINF:-1 tvg-logo="https://i.imgur.com/6mk9sAo.jpg" group-title="⭐ ALL SPORTS CHANNELS", TVRI SPORT ᴴᴰ
 https://ott-balancer.tvri.go.id/live/eds/SportHD/hls/SportHD.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/VaUUODO.jpg" group-title="⭐ ALL SPORTS CHANNELS",ESPN NETWORK
-http://supersonictv.live:8080/006779/439866/22208
 #EXTINF:-1 tvg-logo="https://i.imgur.com/PQv3oiM.jpg" group-title="⭐ ALL SPORTS CHANNELS",ESPN U
 https://fl31.moveonjoy.com/ESPN_U/tracks-v1a1/mono.ts.m3u8
 #EXTINF:-1 group-title="⭐ ALL SPORTS CHANNELS" tvg-logo="https://i.imgur.com/gsn3T3v.jpg",DUBAI SPORTS 1
 https://dmidspta.cdn.mgmlcdn.com/dubaisports/smil:dubaisports.stream.smil/master.m3u8
-#EXTINF:-1 group-title="⭐ ALL SPORTS CHANNELS" tvg-logo="https://i.imgur.com/IV8snO1.jpg",DUBAI SPORTS 2
-https://dmitwlvvll.cdn.mgmlcdn.com/dubaisportshd/smil:dubaisportshd.smil/master.m3u8
 #EXTINF:-1 group-title="⭐ ALL SPORTS CHANNELS" tvg-logo="https://i.imgur.com/VE39H7y.jpg",DUBAI SPORTS 3
 https://dmitwlvvll.cdn.mgmlcdn.com/dubaisportshd5/smil:dubaisportshd5.smil/master.m3u8
+#EXTINF:-1 group-title="⭐ ALL SPORTS CHANNELS" tvg-logo="https://i.imgur.com/IV8snO1.jpg",DUBAI SPORTS 2
+https://dmitwlvvll.cdn.mgmlcdn.com/dubaisportshd/smil:dubaisportshd.smil/master.m3u8
 #EXTINF:-1 tvg-id="BahrainSports1.bh" tvg-logo="https://i.imgur.com/IHB8uCF.jpg" group-title="⭐ ALL SPORTS CHANNELS",Bahrain Sports 1
 https://5c7b683162943.streamlock.net/live/ngrp:sportsone_all/playlist.m3u8
 #KODIPROP:inputstream.adaptive.license_type=clearkey
@@ -235,25 +235,51 @@ https://5c7b683162943.streamlock.net/live/ngrp:sportsone_all/playlist.m3u8
 https://a204aivottepl-a.akamaihd.net/sin-nitro/live/clients/dash/enc/fdb3pubmek/out/v1/aefca6420f944a9482e117f315de535f/cenc.mpd
 #EXTINF:-1 tvg-id="BahrainSports2.bh" tvg-logo="https://i.imgur.com/nkmVAXH.jpg" group-title="⭐ ALL SPORTS CHANNELS",Bahrain Sports 2
 https://5c7b683162943.streamlock.net/live/ngrp:bahrainsportstwo_all/playlist.m3u8
-#EXTINF:-1 group-title="⭐ ALL SPORTS CHANNELS" tvg-logo="https://i.imgur.com/ah68fGX.jpg",SUPER SPORT 3
-https://wahyu1ptv.pages.dev/SuperSport3-HD.m3u8
-#EXTINF:-1 group-title="⭐ ALL SPORTS CHANNELS" tvg-logo="https://i.imgur.com/rda7QXJ.jpg",SUPER SPORT 2
-https://wahyu1ptv.pages.dev/SuperSport2-HD.m3u8
 #EXTINF:-1 group-title="⭐ ALL SPORTS CHANNELS" tvg-logo="https://i.imgur.com/yIpBhNI.jpg",SUPER SPORT 1
 https://wahyu1ptv.pages.dev/SuperSport1-HD.m3u8
+#EXTINF:-1 group-title="⭐ ALL SPORTS CHANNELS" tvg-logo="https://i.imgur.com/rda7QXJ.jpg",SUPER SPORT 2
+https://wahyu1ptv.pages.dev/SuperSport2-HD.m3u8
+#EXTINF:-1 group-title="⭐ ALL SPORTS CHANNELS" tvg-logo="https://i.imgur.com/ah68fGX.jpg",SUPER SPORT 3
+https://wahyu1ptv.pages.dev/SuperSport3-HD.m3u8
 #EXTINF:-1 group-title="⭐ ALL SPORTS CHANNELS" tvg-logo="https://i.imgur.com/k44W7jg.jpg",MUTV ᴴᴰ
 http://tvmate.icu:8080/69NpyV/884735/53717
+#EXTINF:-1 tvg-logo="https://i.imgur.com/wddA7nT.jpg" group-title="⭐ ALL SPORTS CHANNELS",REAL MADRID TV ᴴᴰ
+https://rmtv.akamaized.net/hls/live/2043153/rmtv-es-web/bitrate_3.m3u8
+#KODIPROP:inputstreamaddon=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=c5e51f41ceac48709d0bdcd9c13a4d88:20b91609967e472c27040716ef6a8b9a
+#EXTINF:-1 tvg-logo="https://i.imgur.com/O9OKm59.jpg", group-title="⭐ ALL SPORTS CHANNELS", NBA PHILIPPINES
+https://qp-pldt-live-bpk-02-prod.akamaized.net/bpk-tv/cgnl_nba/default/index.mpd
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key=53c3bf2eba574f639aa21f2d4409ff11:3de28411cf08a64ea935b9578f6d0edd
 #EXTINF:-1 tvg-logo="https://i.imgur.com/k307aBr.jpg" group-title="⭐ ALL SPORTS CHANNELS", ONE SPORTS ᴴᴰ
 https://qp-pldt-live-bpk-02-prod.akamaized.net/bpk-tv/cg_onesports_hd/default/index.mpd
+#EXTINF:-1 group-title="⭐ ALL SPORTS CHANNELS" tvg-logo="https://i.imgur.com/zd4PN0h.jpg",TRACE SPORTS
+https://lightning-tracesport-samsungau.amagi.tv/playlist.m3u8
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key=322d06e9326f4753a7ec0908030c13d8:1e3e0ca32d421fbfec86feced0efefda
 #EXTINF:-1 tvg-logo="https://i.imgur.com/4ffp4qg.jpg" group-title="⭐ ALL SPORTS CHANNELS", ONE SPORTS+
 https://qp-pldt-live-bpk-02-prod.akamaized.net/bpk-tv/cg_onesportsplus_hd1/default/index.mpd
-#EXTINF:-1 group-title="⭐ ALL SPORTS CHANNELS" tvg-logo="https://i.imgur.com/zd4PN0h.jpg",TRACE SPORTS
-https://lightning-tracesport-samsungau.amagi.tv/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/FuY7wEZ.jpg" group-title="⭐ ALL SPORTS CHANNELS",BILLIYARD TV
+https://newidco-billiardstv-1-eu.xiaomi.wurl.tv/playlist.m3u8
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=00208c93f4358213b52220898b962385:8ae6063167228e350dd132d4a1573102
+#EXTINF:-1 tvg-logo="https://i.imgur.com/I5Io6W5.jpg" group-title="⭐ ALL SPORTS CHANNELS", WWE NXT ᴴᴰ
+http://fsly.stream.peacocktv.com/Content/CMAF_CTR-4s/Live/channel(vc106wh3yw)/master.mpd
+#EXTINF:-1 tvg-logo="https://i.imgur.com/8MCJAtZ.jpg" group-title="⭐ ALL SPORTS CHANNELS",MILAN TV ᴴᴰ
+http://medotv.nl:8000/RAMBOfoundedoninternetsoIchangedTheFuckinguSERNAMelol123/5caU9cN5jFjZ/127757
+#EXTVLCOPT:http-user-agent=ExoPlayerDemo/2.15.1 (Linux; Android 13) ExoPlayerLib/2.15.1
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=47c03f29f04747d2a298c0ad63f3b2c1:8b48b2cb2743b91d5f20cf2622067f3a
+#EXTINF:-1 tvg-logo="https://i.imgur.com/YZkCRlG.jpg" group-title="⭐ ALL SPORTS CHANNELS", EUROSPORT
+https://atemeshield1-voe.sysln.id/live/eds/EUROSPORTHD/mediampd/EUROSPORTHD.mpd
+#EXTINF:-1 tvg-logo="https://i.imgur.com/lJoFi92.jpg" group-title="⭐ ALL SPORTS CHANNELS",BARCA TV ᴴᴰ
+https://amg17560-fcb-amg17560c1-rakuten-uk-4891.playouts.now.amagi.tv/playlist/amg17560-fcbarcelona-topbarcaenglish-rakutenuk/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/maq2Qzk.jpg" group-title="⭐ ALL SPORTS CHANNELS",FIGHT SPORTS
+https://d2tjypxxy769fn.cloudfront.net/out/v1/73b7057c72da4615888a11b02a6cbb3c/index.mpd
