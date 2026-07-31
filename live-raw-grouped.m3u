@@ -1,4 +1,4 @@
-#EXTM3U url-version="2026-07-31T15:30:57.767Z"
+#EXTM3U url-version="2026-07-31T17:08:56.280Z"
 
 #EXTINF:-1 group-title="⚽ LIVE EVENT", HARI INI - 3 Event
 # EVENT INFO: Central Córdoba de Santiago del Estero vs Atlético Tucumán (07:15 WIB) - 31-07-2026
@@ -37,16 +37,16 @@ https://qp-pldt-live-grp-13-prod.akamaized.net/out/u/dr_spotv2hd.mpd
 https://atemecdnbalancer-voe.sysln.id/live/eds/SPOTVHD/mediampd/SPOTVHD.mpd
 #EXTINF:-1 tvg-logo="https://i.imgur.com/BGu4tAb.jpg" ,BEIN SPORTS 3 BUNDES LIGA
 https://raw.githubusercontent.com/DonzCompIndonesia/donztelevision/refs/heads/main/v1/BS3.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/lIzyqdW.jpg" ,BEIN SPORTS 4
+http://superintendent.whatevergos.com:8080/ABDULLAH/aHVzDrpCMh/142758
 #EXTINF:-1 tvg-logo="https://i.imgur.com/fAaNONB.jpg" ,BEIN SPORTS 5
 http://superintendent.whatevergos.com:8080/ABDULLAH/aHVzDrpCMh/142759
+#EXTINF:-1 tvg-logo="https://i.imgur.com/m7BZFt3.jpg" ,BEIN SPORTS 6
+http://superintendent.whatevergos.com:8080/ABDULLAH/aHVzDrpCMh/142760
 #EXTINF:-1 tvg-logo="https://i.imgur.com/rAvA5Co.jpg" ,BEIN SPORTS 8
 http://superintendent.whatevergos.com:8080/ABDULLAH/aHVzDrpCMh/142752
 #EXTINF:-1 tvg-logo="https://i.imgur.com/6jxpZQ8.jpg" ,BEIN SPORTS 7
 http://superintendent.whatevergos.com:8080/ABDULLAH/aHVzDrpCMh/142761
-#EXTINF:-1 tvg-logo="https://i.imgur.com/lIzyqdW.jpg" ,BEIN SPORTS 4
-http://superintendent.whatevergos.com:8080/ABDULLAH/aHVzDrpCMh/142758
-#EXTINF:-1 tvg-logo="https://i.imgur.com/m7BZFt3.jpg" ,BEIN SPORTS 6
-http://superintendent.whatevergos.com:8080/ABDULLAH/aHVzDrpCMh/142760
 
 #EXTINF:-1 group-title="📅 UPCOMING EVENTS", MENDATANG - 6 Event
 # EVENT INFO: Charleston Battery vs Brooklyn FC (06:30 WIB) - 01-08-2026
@@ -101,18 +101,18 @@ https://otte.live.fly.ww.aiv-cdn.net/gru-nitro/live/clients/dash-sd/enc/4yiko4it
 https://wahyu1ptv.pages.dev/ZiggoSport2-HD.m3u8
 #EXTINF:-1 group-title="⭐ ALL SPORTS CHANNELS" tvg-logo="https://i.imgur.com/RElOsbl.jpg", SONY SPORTS 2
 https://raw.githubusercontent.com/DonzCompIndonesia/donztelevision/refs/heads/main/v1/Son2.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="UNIFI.Sports" tvg-logo="https://i.imgur.com/12pIGvo.jpg" group-title="⭐ ALL SPORTS CHANNELS",FS2
+https://raw.githubusercontent.com/DonzCompIndonesia/donztelevision/refs/heads/main/v1/Foxsports2.m3u8
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=8836fb04d62dc64c9f8a39ef8640d5eb:d4f05ce56c5231b7cdf53455bea58621
 #EXTINF:-1 tvg-id="" tvg-name="UNIFI.Sports" tvg-logo="https://i.imgur.com/NrfhpN6.jpg" group-title="⭐ ALL SPORTS CHANNELS",FOX SPORT PREMIUM
 https://otte.live.fly.ww.aiv-cdn.net/dub-nitro/live/dash/enc/tepjqej1ys/out/v1/c9c9159baee749a19612b1598495859a/cenc.mpd
-#EXTINF:-1 tvg-id="" tvg-name="UNIFI.Sports" tvg-logo="https://i.imgur.com/12pIGvo.jpg" group-title="⭐ ALL SPORTS CHANNELS",FS2
-https://raw.githubusercontent.com/DonzCompIndonesia/donztelevision/refs/heads/main/v1/Foxsports2.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="ASTRO ARENA 2 HD" tvg-logo="https://i.imgur.com/jOaanPV.jpg" group-title="⭐ ALL SPORTS CHANNELS",ASTRO ARENA 2 ᴴᴰ
-https://raw.githubusercontent.com/DonzCompIndonesia/donztelevision/refs/heads/main/v1/Astar2.m3u8
 #EXTINF:-1 tvg-id="" tvg-name="MY| ASTRO ARENA BOLA 1" tvg-logo="https://i.imgur.com/GpZxtSR.jpg" group-title="⭐ ALL SPORTS CHANNELS",ASTRO FOOTBALL ᴴᴰ
 https://raw.githubusercontent.com/DonzCompIndonesia/donztelevision/refs/heads/main/v1/AstFut.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="ASTRO ARENA 2 HD" tvg-logo="https://i.imgur.com/jOaanPV.jpg" group-title="⭐ ALL SPORTS CHANNELS",ASTRO ARENA 2 ᴴᴰ
+https://raw.githubusercontent.com/DonzCompIndonesia/donztelevision/refs/heads/main/v1/Astar2.m3u8
 #EXTINF:-1 group-title="⭐ ALL SPORTS CHANNELS" tvg-logo="https://i.imgur.com/h78kzeH.jpg", ASTRO SPORTS PLUS ᴴᴰ
 https://raw.githubusercontent.com/Cutsiffa/pl/refs/heads/main/Astpl4.m3u8
 #EXTINF:-1 tvg-id="sonyten2hd.in" tvg-name="SONY TEN 2 HD" tvg-logo="https://i.imgur.com/u8Sn4SU.jpg" group-title="⭐ ALL SPORTS CHANNELS",SONY TEN 2 ᴴᴰ
