@@ -1,4 +1,4 @@
-#EXTM3U url-version="2026-08-01T20:30:08.372Z"
+#EXTM3U url-version="2026-08-01T21:32:34.174Z"
 
 #EXTINF:-1 group-title="⚽ LIVE EVENT", HARI INI - 3 Event
 # EVENT INFO: Charleston Battery vs Brooklyn FC (06:30 WIB) - 01-08-2026
@@ -37,21 +37,16 @@ https://qp-pldt-live-grp-13-prod.akamaized.net/out/u/dr_spotv2hd.mpd
 https://atemecdnbalancer-voe.sysln.id/live/eds/SPOTVHD/mediampd/SPOTVHD.mpd
 #EXTINF:-1 tvg-logo="https://i.imgur.com/BGu4tAb.jpg" ,BEIN SPORTS 3 BUNDES LIGA
 https://raw.githubusercontent.com/DonzCompIndonesia/donztelevision/refs/heads/main/v1/BS3.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/6jxpZQ8.jpg" ,BEIN SPORTS 7
-http://superintendent.whatevergos.com:8080/ABDULLAH/aHVzDrpCMh/142761
-#EXTINF:-1 tvg-logo="https://i.imgur.com/fAaNONB.jpg" ,BEIN SPORTS 5
-http://superintendent.whatevergos.com:8080/ABDULLAH/aHVzDrpCMh/142759
-#EXTINF:-1 tvg-logo="https://i.imgur.com/rAvA5Co.jpg" ,BEIN SPORTS 8
-http://superintendent.whatevergos.com:8080/ABDULLAH/aHVzDrpCMh/142752
 #EXTINF:-1 tvg-logo="https://i.imgur.com/lIzyqdW.jpg" ,BEIN SPORTS 4
 http://superintendent.whatevergos.com:8080/ABDULLAH/aHVzDrpCMh/142758
 #EXTINF:-1 tvg-logo="https://i.imgur.com/m7BZFt3.jpg" ,BEIN SPORTS 6
 http://superintendent.whatevergos.com:8080/ABDULLAH/aHVzDrpCMh/142760
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=002046c9a49b9ab1cdb6616bec5d26c3:d2f92f6b7edc9a1a05d393ba0c20ef9e
-#EXTVLCOPT:http-user-agent=Roku/DVP-12.0
-#EXTINF:-1 tvg-url="https://bit.ly/IndonesiaEpg" tvg-logo="https://i.imgur.com/AThIw8U.jpg" ,PEACOCK TV
-https://fsly.stream.peacocktv.com/Content/CMAF_CTR-4s/Live/channel(vc1021n07j)/master.mpd
+#EXTINF:-1 tvg-logo="https://i.imgur.com/fAaNONB.jpg" ,BEIN SPORTS 5
+http://superintendent.whatevergos.com:8080/ABDULLAH/aHVzDrpCMh/142759
+#EXTINF:-1 tvg-logo="https://i.imgur.com/rAvA5Co.jpg" ,BEIN SPORTS 8
+http://superintendent.whatevergos.com:8080/ABDULLAH/aHVzDrpCMh/142752
+#EXTINF:-1 tvg-logo="https://i.imgur.com/6jxpZQ8.jpg" ,BEIN SPORTS 7
+http://superintendent.whatevergos.com:8080/ABDULLAH/aHVzDrpCMh/142761
 
 #EXTINF:-1 group-title="📅 UPCOMING EVENTS", MENDATANG - 6 Event
 # EVENT INFO: Birmingham Legion vs Rhode Island FC (07:00 WIB) - 02-08-2026
